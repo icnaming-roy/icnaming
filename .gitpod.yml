@@ -1,0 +1,8 @@
+tasks:
+  - init: |
+      cd src
+      ./sh_setup_dev.sh
+image: docker.io/kentsday/dfx_rust:bullseye
+vscode:
+  extensions:
+    - matklad.rust-analyzer

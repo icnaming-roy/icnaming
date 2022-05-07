@@ -1,7 +1,6 @@
 .dfx
 
 /src/package/
-.idea
 node_modules
 
 cucumber-report.json
