@@ -58,6 +58,11 @@ tasks:
 vscode:
   extensions:
     - matklad.rust-analyzer
+    - GitHub.copilot
+    - panicbit.cargo
+    - bungcip.better-toml
+    - usernamehw.errorlens
+    - ms-azuretools.vscode-docker
 jetbrains:
   pycharm:
     plugins:

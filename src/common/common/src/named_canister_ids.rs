@@ -10,6 +10,7 @@ use log::info;
 
 thread_local! {
     pub static NAMED_CANISTER_IDS :RefCell<NamedCanisterIds> = RefCell::new(NamedCanisterIds::default());
+    pub static DEV_NAMED_CANISTER_IDS :RefCell<HashMap<CanisterNames, Principal>> = RefCell::new(HashMap::default());
 }
 
 pub struct NamedCanisterIds {
@@ -28,7 +29,7 @@ impl Display for NamedCanisterIds {
 
 impl Default for NamedCanisterIds {
     fn default() -> Self {
-        let mut map = HashMap::new();
+        let map = HashMap::new();
         let result = NamedCanisterIds {
             dynamic_canisters: map,
             current_name: "".to_string(),
