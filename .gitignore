@@ -1,5 +1,5 @@
 .dfx
-
+.idea
 /src/package/
 node_modules
 
