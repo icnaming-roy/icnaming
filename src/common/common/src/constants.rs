@@ -3,7 +3,7 @@ use crate::errors::NamingError;
 use crate::named_canister_ids::{CanisterNames, DEV_NAMED_CANISTER_IDS};
 use candid::Principal;
 use const_env::from_env;
-use log::{info, debug};
+use log::{debug, info};
 use once_cell::sync::Lazy;
 use std::str::FromStr;
 
@@ -145,8 +145,12 @@ pub static CANISTER_IDS_REGISTRAR: Lazy<Principal> =
 
 #[from_env]
 const NAMING_CANISTER_IDS_REGISTRAR_CONTROL_GATEWAY: &str = "";
-pub static CANISTER_IDS_REGISTRAR_CONTROL_GATEWAY: Lazy<Principal> =
-    Lazy::new(|| load_dev_or_env(CanisterNames::RegistrarControlGateway, NAMING_CANISTER_IDS_REGISTRAR_CONTROL_GATEWAY));
+pub static CANISTER_IDS_REGISTRAR_CONTROL_GATEWAY: Lazy<Principal> = Lazy::new(|| {
+    load_dev_or_env(
+        CanisterNames::RegistrarControlGateway,
+        NAMING_CANISTER_IDS_REGISTRAR_CONTROL_GATEWAY,
+    )
+});
 
 #[from_env]
 const NAMING_CANISTER_IDS_REGISTRY: &str = "";
@@ -158,8 +162,12 @@ pub static CANISTER_IDS_RESOLVER: Lazy<Principal> =
     Lazy::new(|| load_dev_or_env(CanisterNames::Resolver, NAMING_CANISTER_IDS_RESOLVER));
 #[from_env]
 const NAMING_CANISTER_IDS_CYCLES_MINTING: &str = "";
-pub static CANISTER_IDS_CYCLES_MINTING: Lazy<Principal> =
-    Lazy::new(|| load_dev_or_env(CanisterNames::CyclesMinting, NAMING_CANISTER_IDS_CYCLES_MINTING));
+pub static CANISTER_IDS_CYCLES_MINTING: Lazy<Principal> = Lazy::new(|| {
+    load_dev_or_env(
+        CanisterNames::CyclesMinting,
+        NAMING_CANISTER_IDS_CYCLES_MINTING,
+    )
+});
 #[from_env]
 const NAMING_CANISTER_IDS_FAVORITES: &str = "";
 pub static CANISTER_IDS_FAVORITES: Lazy<Principal> =
@@ -178,8 +186,12 @@ pub static CANISTER_IDS_MYSTERY_BOX: Lazy<Principal> =
     Lazy::new(|| load_dev_or_env(CanisterNames::MysteryBox, NAMING_CANISTER_IDS_MYSTERY_BOX));
 #[from_env]
 const NAMING_CANISTER_IDS_NAMING_MARKETPLACE: &str = "";
-pub static CANISTER_IDS_NAMING_MARKETPLACE: Lazy<Principal> =
-    Lazy::new(|| load_dev_or_env(CanisterNames::NamingMarketplace, NAMING_CANISTER_IDS_NAMING_MARKETPLACE));
+pub static CANISTER_IDS_NAMING_MARKETPLACE: Lazy<Principal> = Lazy::new(|| {
+    load_dev_or_env(
+        CanisterNames::NamingMarketplace,
+        NAMING_CANISTER_IDS_NAMING_MARKETPLACE,
+    )
+});
 
 #[from_env]
 pub const NAMING_PRINCIPAL_NAME_ADMIN: &str = "";

@@ -22,6 +22,7 @@ use common::errors::{BooleanActorResponse, ErrorInfo, NamingError, ServiceResult
 use common::named_canister_ids::{get_named_get_canister_id, CanisterNames};
 
 use crate::service::ResolverService;
+use crate::state::InitArgs;
 
 /// Ensure the resolver is created.
 /// Returns true if the resolver is created, false otherwise.

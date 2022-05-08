@@ -1,9 +1,9 @@
 use crate::constants::is_dev_env;
+use crate::constants::NAMING_ENV;
 use ic_cdk::api;
-use log::{Level, LevelFilter, Metadata, Record, info};
+use log::{info, Level, LevelFilter, Metadata, Record};
 use std::panic;
 use yansi::Paint;
-use crate::constants::NAMING_ENV;
 
 use crate::named_canister_ids::{update_current_canister_name, NAMED_CANISTER_IDS};
 

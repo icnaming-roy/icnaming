@@ -7,6 +7,7 @@ mod state;
 mod shared_actor;
 mod stats_service;
 
+use crate::state::InitArgs;
 use candid::{candid_method, CandidType, Principal};
 use common::dto::*;
 use common::errors::{BooleanActorResponse, ErrorInfo, NamingError, ServiceResult};

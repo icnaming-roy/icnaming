@@ -1,3 +1,4 @@
+use candid::{CandidType, Deserialize};
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::fmt::{Display, Formatter};
@@ -96,7 +97,15 @@ pub fn update_current_canister_name(name: &str) {
     });
 }
 
-#[derive(Eq, Ord, PartialOrd, PartialEq, Hash, Debug, Copy, Clone)]
+pub fn update_dev_named_canister_ids(ids: &HashMap<CanisterNames, Principal>) {
+    DEV_NAMED_CANISTER_IDS.with(|n| {
+        let mut x = n.borrow_mut();
+        x.clear();
+        x.extend(ids.iter());
+    });
+}
+
+#[derive(Eq, Ord, PartialOrd, PartialEq, Hash, Debug, Copy, Clone, CandidType, Deserialize)]
 #[repr(u8)]
 pub enum CanisterNames {
     Registry,
