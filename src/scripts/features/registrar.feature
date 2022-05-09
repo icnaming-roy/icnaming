@@ -13,10 +13,10 @@ Feature: Query Api
       | 012345678901234567890123456789012345678901234567890123456789012345678912345.ark | name is invalid, reason: "second level name must be less than 64 characters" |
       | www.hello.ark                                                                   | name is invalid, reason: "it must be second level name"                      |
       | icp                                                                             | name is invalid, reason: "it must be second level name"                      |
-      | hello.com                                                                       | name is invalid, reason: "top level of name must be icp"                     |
+      | hello.com                                                                       | name is invalid, reason: "top level of name must be ark"                     |
       | hel!lo.ark                                                                      | name is invalid, reason: "name must be alphanumeric or -"                    |
       | hello .ark                                                                      | name is invalid, reason: "name must be alphanumeric or -"                    |
-      | 你好.ark                                                                          | name is invalid, reason: "name must be alphanumeric or -"                    |
+      | 你好.ark                                                                         | name is invalid, reason: "name must be alphanumeric or -"                   |
       | icp.ark                                                                         | Registration has been taken                                                  |
 
   Scenario: Check availability of a name which is already taken
