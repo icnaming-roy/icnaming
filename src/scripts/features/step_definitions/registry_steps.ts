@@ -15,7 +15,7 @@ let global_set_subdomain_owner_result: GetDetailsResponse
 When(/^I call set_subdomain_owner to add a second level name$/,
   async function () {
     const call = registry.set_subdomain_owner('hello2.ark',
-      'icp',
+      'ark',
       identities.user1.identity.getPrincipal(),
       BigInt(600),
       Principal.fromText(get_id(resolver)))

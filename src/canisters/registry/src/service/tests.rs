@@ -434,7 +434,7 @@ mod reset_name {
             let store = s.registry_store.borrow();
             let registries = store.get_registries();
             assert_eq!(registries.len(), 3);
-            registries.get("icp").unwrap();
+            registries.get("ark").unwrap();
             registries.get("wownice.ark").unwrap();
             let registry = registries.get("nice.ark").unwrap();
             assert_eq!(registry.get_name(), "nice.ark");
