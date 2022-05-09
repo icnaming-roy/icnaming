@@ -393,7 +393,7 @@ mod reset_name {
             "sub2.nice.ark",
             "nice.ark",
             "wownice.ark",
-            "icp",
+            "ark",
         ];
         let resolver = get_named_get_canister_id(CanisterNames::Resolver);
 
