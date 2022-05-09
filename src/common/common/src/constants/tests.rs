@@ -14,11 +14,11 @@ fn test_accept_multiline_env() {
     let set = lines_hashset(env_value);
     assert_eq!(set.len(), 2);
     assert!(set.contains(
-        &Principal::from_text("5nzoz-sqvpu-74d7b-5jc7s-lbngl-n72mg-o3vms-imvav-uc4iy-7dxys-nae")
+        &Principal::from_text("ospgt-yzzk6-fvirh-5wvnz-qgpgk-szcnc-6ejpy-h2uqa-q52vv-ugazm-cae")
             .unwrap()
     ));
     assert!(set.contains(
-        &Principal::from_text("ocmdv-s2awt-ypd2c-uw2e6-v4g4v-qr6gn-wfsim-jo7h4-f3wgu-gokqj-gqe")
+        &Principal::from_text("tjsji-y6o2d-27txe-kwuur-r4nz7-o3ojq-6o22e-t2ss5-3uzqz-lmcuc-tae")
             .unwrap()
     ));
 }
