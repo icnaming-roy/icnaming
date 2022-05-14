@@ -18,10 +18,6 @@ tasks:
       gcc-multilib \
       && apt-get clean
 
-      pip3 install pipenv && \
-      pip3 install pre-commit && \
-      pre-commit install
-
       rustup toolchain install stable && \
       rustup target add wasm32-unknown-unknown --toolchain stable
 
@@ -52,6 +48,10 @@ tasks:
       dfx stop
 
     command: |
+      pip3 install pipenv && \
+      pip3 install pre-commit && \
+      pre-commit install
+
       cd src
 
       curl -fsSL https://sdk.dfinity.org/install.sh > install.sh
@@ -62,8 +62,8 @@ tasks:
       . "$HOME/.bashrc"
       dfx --version
 
-      ./sh_setup_dev.sh
       ./start.sh
+      ./sh_setup_dev.sh
 vscode:
   extensions:
     - matklad.rust-analyzer
