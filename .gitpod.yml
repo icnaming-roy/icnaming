@@ -25,7 +25,10 @@ tasks:
       rustup toolchain install stable && \
       rustup target add wasm32-unknown-unknown --toolchain stable
 
-      curl -fsSL https://sdk.dfinity.org/install.sh | bash -s -- -y
+      curl -fsSL https://sdk.dfinity.org/install.sh > install.sh
+      chmod +x install.sh
+      DFX_VERSION=0.9.3  ./install.sh
+      rm install.sh
       echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
       . "$HOME/.bashrc"
       dfx --version
@@ -50,10 +53,15 @@ tasks:
 
     command: |
       cd src
-      curl -fsSL https://sdk.dfinity.org/install.sh | bash -s -- -y
+
+      curl -fsSL https://sdk.dfinity.org/install.sh > install.sh
+      chmod +x install.sh
+      DFX_VERSION=0.9.3  ./install.sh
+      rm install.sh
       echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
       . "$HOME/.bashrc"
       dfx --version
+
       ./sh_setup_dev.sh
       ./start.sh
 vscode:
