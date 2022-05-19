@@ -1,49 +1,11 @@
+image: docker.io/kentsday/dfx_rust:bullseye-dfx-0.9.3-gitpod-1
 tasks:
   - name: dfx dev
     init: |
-      sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
-      && apt-get -y install \
-      liblmdb-dev \
-      # cpp \
-      # gcc-8-multilib \
-      # libgcc-8-dev \
-      gcc \
-      # g++ \
-      build-essential \
-      gdb \
-      python3-pip \
-      make \
-      cmake \
-      pkg-config \
-      gcc-multilib \
-      && apt-get clean
-
-      rustup toolchain install stable && \
-      rustup target add wasm32-unknown-unknown --toolchain stable
-
-      curl -fsSL https://sdk.dfinity.org/install.sh > install.sh
-      chmod +x install.sh
-      DFX_VERSION=0.9.3  ./install.sh
-      rm install.sh
-      echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
-      . "$HOME/.bashrc"
-      dfx --version
-
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
-      . ~/.bashrc && \
-      nvm i 16 && \
-      npm i -g typescript && \
-      npm i -g ts-node
-
-      cargo install ic-cdk-optimizer && \
-      cargo install cargo-audit && \
-      cargo install cargo-nextest && \
-      cargo install cargo-llvm-cov
-
       cd src
       ./sh_post_container_created.sh
 
-      dfx start --background
+      ./start.sh
       ./sh_reinstall.sh
       dfx stop
 
@@ -53,14 +15,6 @@ tasks:
       pre-commit install
 
       cd src
-
-      curl -fsSL https://sdk.dfinity.org/install.sh > install.sh
-      chmod +x install.sh
-      DFX_VERSION=0.9.3  ./install.sh
-      rm install.sh
-      echo 'export PATH="$PATH:$HOME/bin"' >> "$HOME/.bashrc"
-      . "$HOME/.bashrc"
-      dfx --version
 
       ./start.sh
       ./sh_setup_dev.sh
