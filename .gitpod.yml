@@ -1,4 +1,4 @@
-image: docker.io/kentsday/dfx_rust:bullseye-dfx-0.9.3-gitpod-3
+image: docker.io/kentsday/dfx_rust:bullseye-dfx-0.9.3-gitpod-5
 ports:
   - port: 8000
     visibility: public
