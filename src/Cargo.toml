@@ -5,6 +5,8 @@ members = [
     "common/build_common",
     "common/common_actor",
     "canisters/cycles_minting",
+    "canisters/naming_marketplace",
+    "canisters/mystery_box",
     "canisters/registrar",
     "canisters/registrar_control_gateway",
     "canisters/registry",

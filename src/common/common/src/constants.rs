@@ -129,7 +129,7 @@ fn load_dev_or_env(name: CanisterNames, env_value: &str) -> Principal {
                 info!("load_dev_or_env: from dev id list {:?} = {}", name, id);
                 *id
             } else {
-                info!("load_dev_or_env: from env {}", env_value);
+                info!("load_dev_or_env: from env {:?} = {}", name, env_value);
                 Principal::from_str(env_value).unwrap()
             }
         })

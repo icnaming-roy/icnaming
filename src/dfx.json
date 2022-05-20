@@ -30,6 +30,16 @@
       "package": "cycles_minting",
       "candid": "canisters/cycles_minting/src/cycles_minting.did"
     },
+    "naming_marketplace": {
+      "type": "rust",
+      "package": "naming_marketplace",
+      "candid": "canisters/naming_marketplace/src/naming_marketplace.did"
+    },
+    "mystery_box": {
+      "type": "rust",
+      "package": "mystery_box",
+      "candid": "canisters/mystery_box/src/mystery_box.did"
+    },
     "ledger": {
       "type": "custom",
       "candid": "scripts/wasm/ledger.public.did",
