@@ -7,36 +7,36 @@ Feature: Import Names by admin
   Scenario: Import Name by admin successfully
     When Admin import names as following
       | name       | owner | years |
-      | name1.ark  | user1 | 1     |
-      | na2.ark    | user1 | 2     |
-      | iiiiii.ark | user2 | 3     |
-    Then registrar get_details "name1.ark" result is
+      | name1.ic  | user1 | 1     |
+      | na2.ic    | user1 | 2     |
+      | iiiiii.ic | user2 | 3     |
+    Then registrar get_details "name1.ic" result is
       | key        | value     |
       | owner      | user1     |
-      | name       | name1.ark |
+      | name       | name1.ic |
       | expired_at | 1         |
       | created_at | 0         |
-    And registrar get_details "na2.ark" result is
+    And registrar get_details "na2.ic" result is
       | key        | value   |
       | owner      | user1   |
-      | name       | na2.ark |
+      | name       | na2.ic |
       | expired_at | 2       |
       | created_at | 0       |
-    And registrar get_details "iiiiii.ark" result is
+    And registrar get_details "iiiiii.ic" result is
       | key        | value      |
       | owner      | user2      |
-      | name       | iiiiii.ark |
+      | name       | iiiiii.ic |
       | expired_at | 3          |
       | created_at | 0          |
 
   Scenario: Import Name by admin twice then data no change
     When Admin import names as following
       | name      | owner | years |
-      | name1.ark | user1 | 1     |
-      | name1.ark | user2 | 3     |
-    Then registrar get_details "name1.ark" result is
+      | name1.ic | user1 | 1     |
+      | name1.ic | user2 | 3     |
+    Then registrar get_details "name1.ic" result is
       | key        | value     |
       | owner      | user1     |
-      | name       | name1.ark |
+      | name       | name1.ic |
       | expired_at | 1         |
       | created_at | 0         |

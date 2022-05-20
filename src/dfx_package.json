@@ -6,14 +6,6 @@
     {
       "name": "dev",
       "canister_env": "dev"
-    },
-    {
-      "name": "staging",
-      "canister_env": "staging"
-    },
-    {
-      "name": "production",
-      "canister_env": "production"
     }
   ]
 }
