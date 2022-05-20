@@ -6,7 +6,7 @@ ports:
 tasks:
   - name: dfx dev
     init: |
-      ~/fix_gitpod_path.sh
+      . ~/fix_gitpod_path.sh
       cd src
       ./start.sh
       ./sh_setup_dev.sh
@@ -14,7 +14,7 @@ tasks:
       dfx stop
 
     command: |
-      ~/fix_gitpod_path.sh
+      . ~/fix_gitpod_path.sh
 
       pip3 install pipenv && \
       pip3 install pre-commit && \
